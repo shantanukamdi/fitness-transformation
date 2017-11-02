@@ -17,4 +17,7 @@ export class FirebaseDatabaseService {
                           userid: userPersonalData
                        });
   }
+  storeWeeklyData( userWeeklyData ){
+
+  }
 }

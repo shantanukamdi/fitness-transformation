@@ -6,7 +6,7 @@
             <div class="form-group">
                 <label for="select" class="col-lg-2 control-label">Week Number</label>
                 <div class="col-lg-5">
-                  <select class="form-control" id="select">
+                  <select class="form-control" id="select" name="weekNumber" [(ngModel)] = "weekNumber">
                     <option>Week 1</option>
                     <option>Week 2</option>
                     <option>Week 3</option>
@@ -25,7 +25,7 @@
             <div class="form-group">
                 <label for="select" class="col-lg-2 control-label">Exercise</label>
                 <div class="col-lg-5">
-                  <select class="form-control" id="select">
+                  <select class="form-control" id="select" name="exercise" [(ngModel)] = "exercise">
                     <option>YES</option>
                     <option>NO</option>
                   </select>
@@ -34,37 +34,34 @@
             <div class="form-group">
               <label for="inputBFP" class="col-lg-2 control-label">Body Fat Percentage</label>
               <div class="col-lg-5">
-                <input type="number" class="form-control" id="inputBFP">
+                <input type="number" class="form-control" id="inputBFP" name="bodyFatPercentage" [(ngModel)] = "bodyFatPercentage">
               </div>
             </div>
             <div class="form-group">
                 <label for="inputWC" class="col-lg-2 control-label">Waist Circumference</label>
                 <div class="col-lg-5">
-                  <input type="number" class="form-control" id="inputWC">
+                  <input type="number" class="form-control" id="inputWC" name="waistCircumference" [(ngModel)] = "waistCircumference">
                 </div>
             </div>
             <div class="form-group">
                   <label for="inputWeight" class="col-lg-2 control-label">Weight</label>
                   <div class="col-lg-5">
-                    <input type="number" class="form-control" id="inputWeight">
+                    <input type="number" class="form-control" id="inputWeight" name="height" [(ngModel)] = "height">
                   </div>
             </div>
             <div class="form-group">
                 <label for="inputBMR" class="col-lg-2 control-label">Basal Metabolic Rate </label>
                 <div class="col-lg-5">
-                  <input type="number" class="form-control" id="inputBMR">
+                  <input type="number" class="form-control" id="inputBMR" name="basalMetabolicRate" [(ngModel)] = "basalMetabolicRate">
                 </div>
             </div>
             <div class="form-group">
-                <label for="inputBMR" class="col-lg-2 control-label">Upload Image</label>
-                <label class="btn btn-primary" for="my-file-selector">
-                    <input id="my-file-selector" type="file" style="display:none;">
-                    Upload
-                </label>
-            </div>
+              <label for="inputBMR" class="col-lg-2 control-label">Upload Image</label>
+              <input id="my-file-selector" type="file" (change)="detectFiles($event)">
+            </div>  
             <div class="form-group">
                 <div class="col-lg-10 col-lg-offset-2">
-                  <button class="btn btn-success">SAVE</button>
+                  <button class="btn btn-success" (click) = "saveUserPersonalData()">SAVE</button>
                   <button class="btn btn-primary">CANCEL</button>
                 </div>
             </div>
