@@ -18,6 +18,14 @@ export class FirebaseDatabaseService {
                        });
   }
   storeWeeklyData( userWeeklyData ){
-
+    console.log('Weekly data in Firebase Service is ');
+    console.log(userWeeklyData);
+    let weekNumber = userWeeklyData.weekNumber;
+    let userid = firebase.auth().currentUser;
+    firebase.database().ref('/userPersonalData')
+                       .child(userid.uid)
+                       .update({
+                        [weekNumber]: userWeeklyData
+                       });
   }
 }

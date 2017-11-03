@@ -7,7 +7,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { LoginComponent } from './components/login/login.component';
 import { environment } from '../environments/environment';
 import { FirebaseAuthService } from './services/firebase-auth.service';
-
+import { FirebaseDatabaseService } from './services/firebase-database.service';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuth } from 'angularfire2/auth';
 import * as firebase from 'firebase';
@@ -32,7 +32,7 @@ import { SignupComponent } from './components/signup/signup.component';
     routing,
     RouterModule
   ],
-  providers: [ AngularFireAuth, FirebaseAuthService ],
+  providers: [ AngularFireAuth, FirebaseAuthService, FirebaseDatabaseService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FirebaseDatabaseService } from '../../services/firebase-database.service';
 
 @Component({
   selector: 'app-edit-details',
@@ -14,7 +15,7 @@ export class EditDetailsComponent implements OnInit {
   basalMetabolicRate: number;
   weeklyImage: FileList;
 
-  constructor() { }
+  constructor(private _firebaseDatabaseService: FirebaseDatabaseService) { }
 
   ngOnInit() {
   }
@@ -33,7 +34,7 @@ export class EditDetailsComponent implements OnInit {
       basalMetabolicRate: this.basalMetabolicRate,
       weeklyImage: this.weeklyImage.item(0)
     };
-    //console.log(this.weeklyImage.item(0));
-    console.log(userWeeklyData);
+    this._firebaseDatabaseService.storeWeeklyData(userWeeklyData);
+
   }
 }

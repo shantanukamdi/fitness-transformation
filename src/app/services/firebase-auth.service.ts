@@ -10,6 +10,7 @@ export class FirebaseAuthService {
   registerUser(userPersonalData){
     let email = userPersonalData.email;
     let password = userPersonalData.password;
+    let name = userPersonalData.name;
 
     console.log(userPersonalData.image);
     return this.afAuth
@@ -20,7 +21,7 @@ export class FirebaseAuthService {
                           .ref('userPersonalData')
                           .child(newUserId)
                           .set({
-                            newUserId: userPersonalData
+                            [name]: userPersonalData
                           });
                   let storagePath = 'images/'+newUserId+'/'+userPersonalData.image.name
                   firebase.storage()
