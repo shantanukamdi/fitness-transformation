@@ -6,17 +6,7 @@ import * as firebase from 'firebase';
 export class FirebaseDatabaseService {
 
   constructor() { }
-
-  storeUserPersonalData( userPersonalData ){
-    console.log('UserPersonalData: ');
-    console.log(userPersonalData);
-    let userid = firebase.auth().currentUser;
-    firebase.database().ref('/userData')
-                       .child(userid.uid)
-                       .set({
-                          userid: userPersonalData
-                       });
-  }
+  
   storeWeeklyData( userWeeklyData ){
     console.log('Weekly data in Firebase Service is ');
     console.log(userWeeklyData);

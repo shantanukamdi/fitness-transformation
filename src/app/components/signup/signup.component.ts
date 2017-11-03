@@ -37,7 +37,7 @@ export class SignupComponent implements OnInit {
 
     this._firebaseAuthService.registerUser(userPersonalData)
                              .then(authData => {
-                                this.router.navigate(['edit-details']);
+                                this.router.navigate(['view-details']);
                              });
   }
 }

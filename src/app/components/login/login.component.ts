@@ -26,7 +26,7 @@ export class LoginComponent implements OnInit {
     }
     this._firebaseAuthService.loginWithEmailAndPassword(user).then(data => {
       console.log(data);
-      this.router.navigate(['edit-details']);
+      this.router.navigate(['view-details']);
     });
     console.log('Username: ',this.email);
     console.log('Password: ',this.password);
