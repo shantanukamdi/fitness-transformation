@@ -16,6 +16,7 @@ import { routing } from './app.routes';
 import { RouterModule } from '@angular/router';
 import { EditDetailsComponent } from './components/edit-details/edit-details.component';
 import { SignupComponent } from './components/signup/signup.component';
+import { ViewDetailsComponent } from './components/view-details/view-details.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { SignupComponent } from './components/signup/signup.component';
     NavbarComponent,
     LoginComponent,
     EditDetailsComponent,
-    SignupComponent
+    SignupComponent,
+    ViewDetailsComponent
   ],
   imports: [
     BrowserModule,
