@@ -15,6 +15,8 @@ export class EditDetailsComponent implements OnInit {
   basalMetabolicRate: number;
   weeklyImage: FileList;
 
+  userWeeklyArray: Array<Object> = [];
+
   constructor(private _firebaseDatabaseService: FirebaseDatabaseService) { }
 
   ngOnInit() {
@@ -34,6 +36,7 @@ export class EditDetailsComponent implements OnInit {
       basalMetabolicRate: this.basalMetabolicRate,
       weeklyImage: this.weeklyImage.item(0)
     };
+    this.userWeeklyArray.push(userWeeklyData);
     this._firebaseDatabaseService.storeWeeklyData(userWeeklyData);
 
   }

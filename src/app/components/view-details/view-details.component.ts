@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FirebaseDatabaseService } from '../../services/firebase-database.service';
 
 @Component({
   selector: 'app-view-details',
@@ -7,7 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ViewDetailsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private _firebaseDatabaseService: FirebaseDatabaseService) { 
+    this._firebaseDatabaseService.getWeeklyData();
+  }
 
   ngOnInit() {
   }

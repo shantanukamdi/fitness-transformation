@@ -10,6 +10,8 @@ import { FirebaseAuthService } from './services/firebase-auth.service';
 import { FirebaseDatabaseService } from './services/firebase-database.service';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuth } from 'angularfire2/auth';
+import { AngularFireDatabase } from 'angularfire2/database';
+
 import * as firebase from 'firebase';
 
 import { routing } from './app.routes';
@@ -34,7 +36,7 @@ import { ViewDetailsComponent } from './components/view-details/view-details.com
     routing,
     RouterModule
   ],
-  providers: [ AngularFireAuth, FirebaseAuthService, FirebaseDatabaseService ],
+  providers: [ AngularFireAuth, FirebaseAuthService, FirebaseDatabaseService, AngularFireDatabase ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
