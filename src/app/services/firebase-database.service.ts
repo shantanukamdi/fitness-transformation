@@ -27,5 +27,8 @@ export class FirebaseDatabaseService {
                        .update({
                         [weekNumber]: userWeeklyData
                        });
+    let storagePath = 'images/'+userid.uid+'/'+userWeeklyData.weeklyImage.name
+    firebase.storage()
+            .ref(storagePath).put(userWeeklyData.weeklyImage);
   }
 }
